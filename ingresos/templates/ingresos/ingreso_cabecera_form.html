@@ -1,0 +1,15 @@
+{% extends 'base_ingresos.html' %}
+
+{% block title %}
+  Nuevo Documento de Ingreso
+{% endblock %}
+
+{% block body %}
+<li><a href="../../listarArticulo">Regresar</a></li>
+  <h1>Nuevo Documento de Ingreso</h1>
+  <form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Grabar'>
+  </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base_trabajadores.html' %}
+
+{% block title %}
+  Detalle de Trabajador
+{% endblock %}
+
+{% block body %}
+  <li><a href="../listarTrabajador">Regresar</a></li>
+  <div align="center">
+    <h1> {{ object.TraNomUsu.first_name }} {{ object.TraNomUsu.last_name }} </h1>
+    <p> Sexo: {{ object.TraSex }} </p>
+    <p> Fecha de nacimiento: {{ object.TraFecNac }} </p>
+    <p> DNI: {{ object.TraDNI }} </p>
+  </div>
+
+{% endblock %}

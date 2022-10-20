@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+    <style>li{
+      list-style-type: none; 
+      background-color: #7fad39;
+      }
+      li a{
+      text-decoration: none;
+      color: white;
+      padding: 25px;
+      display: block;
+      font-size: 25px;
+      }
+      li a:hover{
+        background: #599203;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+  </head>
+
+  <body>
+    You spin me round
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>

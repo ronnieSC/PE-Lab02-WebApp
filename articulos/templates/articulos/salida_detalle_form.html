@@ -1,0 +1,16 @@
+{% extends 'base_ingreso_detalle.html' %}
+
+{% block title %}
+  Detalle de salida
+{% endblock %}
+
+{% block body %}
+<li><a href="../listarArticulo">Regresar</a></li>
+<h2> Detalle de salida de articulo </h2>
+
+<form method='post'>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type='submit' value='Grabar'>
+</form>
+{% endblock %}

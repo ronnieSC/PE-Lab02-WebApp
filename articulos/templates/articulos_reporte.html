@@ -1,0 +1,29 @@
+{% extends 'base_categorias.html' %}
+
+{% block title %}
+  Reporte Articulos
+{% endblock %}
+
+{% block body %}
+<h1>Reporte de Artículos</h1>
+<div align='center'>
+  <table>
+    <tr>
+      <th>Código</th>
+      <th>Categoría</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Stock</th>
+    </tr>
+    {% for i in arts %}
+      <tr>
+        <td>{{ i.ArtCod }}</td>
+        <td>{{ i.ArtCatCod }}</td>
+        <td>{{ i.ArtNom }}</td>
+        <td>{{ i.ArtDes }}</td>
+        <td>{{ i.ArtSto }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

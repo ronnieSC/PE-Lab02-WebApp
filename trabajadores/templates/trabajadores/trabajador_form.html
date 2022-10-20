@@ -1,0 +1,16 @@
+{% extends 'base_trabajadores.html' %}
+
+{% block title %}
+  Crear Trabajador
+{% endblock %}
+
+{% block body %}
+
+<li><a href="listarTrabajador">Regresar</a></li>
+<h2 align="center">Añadiendo Trabajador...</h2>
+<form enctype='multipart/form-data' method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Grabar"/>
+</form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base_categorias.html' %}
+
+{% block title %}
+  Reporte Categorias
+{% endblock %}
+
+{% block body %}
+  {% for i in cats %}
+    <p>{{ i.CatDes }}</p>
+  {% endfor %}
+{% endblock %}

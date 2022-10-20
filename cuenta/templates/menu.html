@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu de Control</title>
+    <style>
+        body{
+            font-family: "Cairo", sans-serif;
+	        
+        }
+        .menu{
+            border-radius: 20px;
+            background: #7fad39;
+            text-align: center;
+            width: 50%;
+            margin: auto;
+            padding: auto;
+        }
+        .menu li a{
+            text-decoration: none;
+            color: white;
+            padding: 30px;
+            display: block;
+            font-size: 30px;
+        }
+        .menu li{
+            text-align: center;
+            list-style-type: none;  
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        .menu li a:hover{
+            background: #599203;
+        }
+    </style>    
+</head>
+<body>
+    {% block content %}
+        <div align="center">
+            {% if user.is_superuser %}
+            <h1>Hola {{ user.username }}, bienvenido al panel de Administracion</h1>
+            {% elif user.is_authenticated %}
+            <h1>Hola {{ user.first_name }}</h1>
+            {% endif %}
+        </div>
+        <div>
+        <h2 align="center">Control de Inventario</h2>
+        <nav>
+            <ul class="menu">
+                <li><a href="categoria/listarCategoria">Administrar Categorias</a></li>
+                <li><a href="articulo/listarArticulo">Administrar Articulos</a></li>
+                <li><a href="proveedor/listarProveedor">Administrar Proveedores</a></li>
+                <li><a href="presentacion/listarPresentacion">Administrar Presentaciones</a></li>
+                {% if user.is_superuser %}
+                <li><a href="register">Añadir Administrador</a></li>
+                <li><a href="trabajador/listarTrabajador">Ver Administradores</a></li>
+                {% endif %}
+                <li><a href="logout">Salir</a></li>
+            </ul>
+        </nav>
+        </div>
+    {% endblock %}
+</body>
+</html>

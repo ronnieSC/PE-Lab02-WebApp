@@ -1,0 +1,31 @@
+{% extends 'base_trabajadores.html' %}
+
+{% block title %}
+  Lista de Trabajadores
+{% endblock %}
+
+{% block body %}
+  <li><a href="../menu">Regresar</a></li>
+  <h1>LISTA DE TRABAJADORES</h1>
+
+  <div align="center">
+    <table>
+      <tr>
+          <th>Nombre de usuario</th>
+          <th>Nombres</th>
+          <th>Enviar informacion</th>
+      </tr>
+    {% for i in object_list %}
+      <tr>
+          <td>{{ i.TraNomUsu.username }}</td>
+          <td>
+            <a href='{{ i.get_absolute_url }}'>
+              {{ i.TraNomUsu.first_name }} {{ i.TraNomUsu.last_name }}
+            </a>
+          </td>
+          <td><a href="send/{{i.TraNomUsu.id}}/">Enviar datos</a></td>
+      </tr>
+    {% endfor %}
+    </table>
+  <li><a href="crearTrabajador">AÑADIR TRABAJADOR</a></li>
+{% endblock %}

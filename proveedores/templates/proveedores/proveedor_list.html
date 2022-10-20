@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control de Inventario</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 65%;
+        }
+        
+        td, th {
+          border: 2px solid #dddddd;
+          text-align: left;
+          padding: 5px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        li{
+          list-style-type: none; 
+          background-color: #7fad39;
+        }
+        li a{
+          text-decoration: none;
+          color: white;
+          padding: 25px;
+          display: block;
+          font-size: 25px;
+        }
+        li a:hover{
+            background: #599203;
+        }
+        </style>
+</head>
+<body>
+    {% block content %} 
+    <li><a href="../menu">Regresar</a></li>
+    <h1>LISTA DE PROVEEDORES</h1>
+
+    <div align="center">
+      <table>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+        </tr>
+      {% for i in object_list %}
+		    <tr>
+            <td>{{ i.ProCod }}</td>
+            <td>{{ i.ProNom }}</td>
+            <td><a href="{{ i.get_absolute_url }}">Editar</a></td>
+            <td><a href="{{ i.ProCod }}/borrar/">Eliminar</a></td>
+		    </tr>
+	  {% endfor %}
+      </table>
+      <li><a href="crearProveedor">AÑADIR PROVEEDOR</a></li>
+  {% endblock %}
+</body>
+</html>
