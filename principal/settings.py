@@ -25,7 +25,7 @@ SECRET_KEY = '#8ek-37tja9y(%ynu9z4622)@89fkxx%o9k=ftl@)4oouj4hg$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['emergenteslab2.pythonanywhere.com', '127.0.0.1',]
 
 
 # Application definition
